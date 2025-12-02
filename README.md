@@ -1,29 +1,31 @@
-# 🔴 Vodafone AI Asistan (RAG Chatbot)
+# 🔴 Vodafone AI Asistan (RAG & Lead Gen)
 
-Bu proje, **Google Gemini** yapay zeka modelini ve **RAG (Retrieval-Augmented Generation)** mimarisini kullanarak geliştirilmiş, kurumsal bir dijital asistandır.
+Bu proje, **Google Gemini 2.0 Flash** yapay zeka modelini, **Yerel Embedding (HuggingFace)** teknolojisini ve **RAG (Retrieval-Augmented Generation)** mimarisini kullanarak geliştirilmiş, kurumsal bir dijital satış asistanıdır.
 
-Standart chatbotların aksine, **halüsinasyon görmez.** Sadece ona öğretilen kurumsal verileri (Tarife bilgileri) kullanarak cevap verir.
+Standart chatbotların aksine, **halüsinasyon görmez.** Sadece ona öğretilen kurumsal verileri (TXT, PDF, Excel) kullanarak cevap verir ve potansiyel müşterileri kaydeder.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
-![AI](https://img.shields.io/badge/AI-Gemini_Flash-orange)
+![AI](https://img.shields.io/badge/AI-Gemini_2.0-orange)
 ![Tech](https://img.shields.io/badge/Tech-RAG-green)
-![Framework](https://img.shields.io/badge/Framework-LangChain-yellow)
+![Data](https://img.shields.io/badge/Data-PDF_%26_Excel-red)
 
 ## 🚀 Projenin Yetenekleri
 
-* **🧠 Akıllı Hafıza:** Kullanıcıyla olan sohbeti hatırlar. "Bunun fiyatı ne?" denildiğinde hangi tarifeden bahsedildiğini anlar.
-* **📚 RAG Mimarisi:** `vodafone.txt` dosyasındaki verileri yerel vektör veritabanına işler ve oradan cevap üretir.
+* **🧠 Akıllı Hafıza (Context Awareness):** Kullanıcıyla olan sohbeti hatırlar. "Bunun fiyatı ne?" denildiğinde hangi tarifeden bahsedildiğini anlar.
+* **📄 Çoklu Format Desteği:** Klasöre atılan `.txt`, `.pdf` ve `.xlsx` dosyalarını otomatik okur. 
+    * *Örnek:* `kampanya.pdf` dosyasındaki "Gizli Sinema İndirimi"ni tespit edip kullanıcıya sunabilir.
 * **🎯 Satış Odaklı (Lead Gen):** Kullanıcı bir tarifeyi beğendiğinde, yan paneldeki form üzerinden İsim/Telefon bilgilerini alıp `basvurular.csv` dosyasına kaydeder.
-* **🎨 Modern Arayüz:** Streamlit ile geliştirilmiş, Vodafone kurumsal kimliğine (Kırmızı/Beyaz) uygun responsive tasarım.
-* **🛡️ Güvenli & Hızlı:** Google kota sınırlarını aşmak için **Yerel Embedding (HuggingFace)** ve **Gemini 2.0 Flash** modeli hibrit olarak kullanılmıştır.
+* **🎈 İnteraktif Arayüz:** Başvuru alındığında görsel geri bildirim (Balon animasyonu) verir.
+* **🛡️ Hibrit Mimari:** Veri işleme için yerel model, cevap üretme için Bulut API (Gemini) kullanılarak hız optimize edilmiştir.
 
 ## 🛠️ Kullanılan Teknolojiler
 
 * **LangChain:** LLM orkestrasyonu.
-* **Google Gemini API:** Doğal dil işleme ve cevap üretme.
-* **ChromaDB:** Vektör veritabanı (Verileri anlamlandırma).
+* **Google Gemini API:** Doğal dil işleme.
+* **ChromaDB:** Vektör veritabanı.
 * **Streamlit:** Web arayüzü.
-* **HuggingFace Embeddings:** Yerel veri işleme modeli.
+* **HuggingFace Embeddings:** Yerel veri işleme.
+* **PyPDF & OpenPyXL:** Doküman işleme.
 
 ## 💻 Kurulum ve Çalıştırma
 
@@ -43,7 +45,7 @@ Projeyi kendi bilgisayarınızda çalıştırmak için:
 3.  **API Anahtarını Ayarlayın:**
     `.env` adında bir dosya oluşturun ve içine Google API anahtarınızı ekleyin:
     ```
-    GOOGLE_API_KEY=AIzaSy... (Sizin Anahtarınız)
+    GOOGLE_API_KEY=AIzaSy...
     ```
 
 4.  **Veritabanını Oluşturun:**
