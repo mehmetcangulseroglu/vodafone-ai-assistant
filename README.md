@@ -15,7 +15,6 @@ Standart chatbotların aksine, **halüsinasyon görmez.** Sadece ona öğretilen
 * **📄 Çoklu Format Desteği:** Klasöre atılan `.txt`, `.pdf` ve `.xlsx` dosyalarını otomatik okur. 
     * *Örnek:* `kampanya.pdf` dosyasındaki "Gizli Sinema İndirimi"ni tespit edip kullanıcıya sunabilir.
 * **🎯 Satış Odaklı (Lead Gen):** Kullanıcı bir tarifeyi beğendiğinde, yan paneldeki form üzerinden İsim/Telefon bilgilerini alıp `basvurular.csv` dosyasına kaydeder.
-* **🎈 İnteraktif Arayüz:** Başvuru alındığında görsel geri bildirim (Balon animasyonu) verir.
 * **🛡️ Hibrit Mimari:** Veri işleme için yerel model, cevap üretme için Bulut API (Gemini) kullanılarak hız optimize edilmiştir.
 
 ## 🛠️ Kullanılan Teknolojiler
