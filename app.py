@@ -7,6 +7,12 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 
+
+import warnings
+warnings.filterwarnings("ignore")
+import logging
+logging.getLogger('googleapiclient').setLevel(logging.ERROR)
+
 # --- AYARLAR ---
 st.set_page_config(page_title="Vodafone Red Asistan", page_icon="🔴", layout="wide")
 load_dotenv()
@@ -57,7 +63,7 @@ def cevap_uret(soru, gecmis):
         bilgi = "\n".join([d.page_content for d in belgeler])
         
         # 2. Zeka
-        model = genai.GenerativeModel('models/gemini-2.0-flash') 
+        model = genai.GenerativeModel('gemini-flash-latest')
         
         prompt = f"""
         Sen Vodafone asistanı Tobi'sin.
